@@ -1,0 +1,573 @@
+<!DOCTYPE html>
+<html >
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Web Development News</title>
+
+    <style>
+
+   
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            color: #202124;
+            background: white;
+        }
+
+        p {
+            font-size: 12px;
+            line-height: 1.5;
+            color: #3c4043;
+        }
+
+        h1,
+        h2,
+        h3 {
+            font-weight: 600;
+        }
+
+
+       
+
+        .news-section {
+            background: #f8f9fa;
+            border-bottom: 1px solid #dadce0;
+        }
+
+        .news-container {
+            width: 830px;
+            max-width: 90%;
+            min-height: 175px;
+            margin: auto;
+
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+
+            gap: 50px;
+        }
+
+        .news-content {
+            flex: 1;
+        }
+
+        .news-content h1 {
+            font-size: 23px;
+            margin-bottom: 18px;
+        }
+
+        .news-content p {
+            max-width: 500px;
+            margin-bottom: 20px;
+        }
+
+
+        
+
+        .outline-btn {
+            display: inline-block;
+
+            padding: 8px 25px;
+
+            border: 1px solid #7aa6c2;
+            border-radius: 20px;
+
+            color: #5b91b4;
+            text-decoration: none;
+
+            font-size: 12px;
+            font-weight: 600;
+
+            transition: 0.3s;
+        }
+
+        .outline-btn:hover {
+            background: #e8f0fe;
+        }
+
+
+      
+
+        .news-image {
+            width: 130px;
+
+            display: flex;
+            justify-content: center;
+        }
+
+        .browser {
+            width: 100px;
+            height: 82px;
+
+            background: white;
+
+            border: 2px solid #b8c0c5;
+            border-radius: 6px;
+
+            padding: 8px;
+
+            position: relative;
+
+            box-shadow: 0 1px 3px rgba(0,0,0,0.12);
+        }
+
+        .browser-top {
+            display: flex;
+            gap: 3px;
+            margin-bottom: 5px;
+        }
+
+        .browser-top span {
+            width: 3px;
+            height: 3px;
+            border-radius: 50%;
+            background: #777;
+        }
+
+        .browser-line {
+            height: 3px;
+            margin: 3px 0;
+            border-radius: 2px;
+        }
+
+        .browser-line.blue {
+            width: 65%;
+            background: #4285f4;
+        }
+
+        .browser-line.green {
+            width: 20%;
+            background: #34a853;
+        }
+
+        .browser-line.dark {
+            width: 80%;
+            background: #555;
+        }
+
+        .browser-line.small {
+            width: 65%;
+        }
+
+        .browser-box {
+            height: 20px;
+            width: 100%;
+
+            background: #70cddd;
+
+            margin-top: 6px;
+        }
+
+        .search-circle {
+            position: absolute;
+
+            right: -10px;
+            top: -10px;
+
+            width: 31px;
+            height: 31px;
+
+            border-radius: 50%;
+
+            background: #fbbc04;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            font-size: 18px;
+            font-weight: bold;
+
+            border: 1px solid #d99c00;
+        }
+
+
+    
+
+        .content-section {
+            border-bottom: 1px solid #dadce0;
+        }
+
+        .white {
+            background: white;
+        }
+
+        .gray {
+            background: #f8f9fa;
+        }
+
+
+   
+
+        .content-container {
+            width: 830px;
+            max-width: 90%;
+
+            margin: auto;
+
+            display: grid;
+
+            grid-template-columns:
+                1fr
+                1fr
+                1fr;
+
+            column-gap: 45px;
+
+            padding: 42px 0;
+        }
+
+        .section-intro h2 {
+            font-size: 22px;
+            margin-bottom: 15px;
+        }
+
+        .section-intro p {
+            font-size: 13px;
+
+            max-width: 250px;
+
+            margin-bottom: 18px;
+        }
+
+        .section-intro p a {
+            color: #4285f4;
+        }
+
+
+
+        .articles article {
+            margin-bottom: 25px;
+        }
+
+        .articles h3 {
+            font-size: 14px;
+
+            line-height: 1.35;
+
+            margin-bottom: 12px;
+
+            color: #303134;
+        }
+
+        .articles p {
+            font-size: 12px;
+
+            line-height: 1.5;
+
+            max-width: 250px;
+        }
+
+
+     
+
+        @media (max-width: 700px) {
+
+            .news-container {
+                flex-direction: column;
+                align-items: flex-start;
+
+                padding: 30px 0;
+            }
+
+            .news-image {
+                align-self: center;
+            }
+
+            .content-container {
+                grid-template-columns: 1fr;
+                row-gap: 30px;
+            }
+
+        }
+
+    </style>
+</head>
+
+
+<body>
+
+
+ 
+
+    <section class="news-section">
+
+        <div class="news-container">
+
+            <div class="news-content">
+
+                <h1>
+                    Keep up on web development news
+                </h1>
+
+                <p>
+                    Read our blog to learn the latest news in web development,
+                    including new web platform features, updates to Baseline,
+                    AI, Core Web Vitals, and more.
+                </p>
+
+                <a href="#" class="outline-btn">
+                    Read the blog
+                </a>
+
+            </div>
+
+
+           
+
+            <div class="news-image">
+
+                <div class="browser">
+
+                    <div class="browser-top">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </div>
+
+                    <div class="browser-line blue"></div>
+
+                    <div class="browser-line green"></div>
+
+                    <div class="browser-line dark"></div>
+
+                    <div class="browser-line dark small"></div>
+
+                    <div class="browser-line dark small"></div>
+
+                    <div class="browser-box"></div>
+
+                    <div class="search-circle">
+                        ⌕
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+ 
+
+    <section class="content-section white">
+
+        <div class="content-container">
+
+
+           
+
+            <div class="section-intro">
+
+                <h2>
+                    Baseline
+                </h2>
+
+                <p>
+                    Get up to speed with the latest updates and
+                    news on <a href="#">Baseline.</a>
+                </p>
+
+                <a href="#" class="outline-btn">
+                    More on Baseline
+                </a>
+
+            </div>
+
+
+
+           
+
+            <div class="articles">
+
+                <article>
+
+                    <h3>
+                        July 2026 Baseline monthly digest
+                    </h3>
+
+                    <p>
+                        Read about various happenings with Baseline
+                        during July 2026.
+                    </p>
+
+                </article>
+
+
+                <article>
+
+                    <h3>
+                        Introducing Baseline Alerts
+                    </h3>
+
+                    <p>
+                        Baseline Alerts have landed on the Web Platform
+                        Status dashboard. Learn how they can shorten the
+                        time between awareness of a web feature, and when
+                        you can adopt it.
+                    </p>
+
+                </article>
+
+            </div>
+
+
+
+           
+
+            <div class="articles">
+
+                <article>
+
+                    <h3>
+                        June 2026 Baseline monthly digest
+                    </h3>
+
+                    <p>
+                        Read about various happenings with Baseline
+                        during June 2026.
+                    </p>
+
+                </article>
+
+
+                <article>
+
+                    <h3>
+                        Effortlessly get Baseline target data
+                        with the updated Baseline Checker tool
+                    </h3>
+
+                    <p>
+                        Get data to select your Baseline target with
+                        Google Analytics data—now faster and easier.
+                    </p>
+
+                </article>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+   
+
+    <section class="content-section gray">
+
+        <div class="content-container">
+
+
+            
+
+            <div class="section-intro">
+
+                <h2>
+                    CSS and UI design
+                </h2>
+
+                <p>
+                    Learn the latest tips and techniques to use
+                    in your work, right now.
+                </p>
+
+                <a href="#" class="outline-btn">
+                    Explore CSS
+                </a>
+
+            </div>
+
+
+
+            
+
+            <div class="articles">
+
+                <article>
+
+                    <h3>
+                        Adapting typography to user preference
+                        using CSS
+                    </h3>
+
+                    <p>
+                        Adapt a font to your users' preferences,
+                        so they're maximally comfortable reading
+                        your content.
+                    </p>
+
+                </article>
+
+
+                <article>
+
+                    <h3>
+                        What are source maps?
+                    </h3>
+
+                    <p>
+                        Improve web debugging experience with
+                        source maps.
+                    </p>
+
+                </article>
+
+            </div>
+
+
+
+           
+
+            <div class="articles">
+
+                <article>
+
+                    <h3>
+                        New CSS color spaces and functions
+                        in all major engines
+                    </h3>
+
+                    <p>
+                        All major engines now support the new CSS
+                        color spaces and functions. Find out how
+                        they can bring vibrancy to your designs.
+                    </p>
+
+                </article>
+
+
+                <article>
+
+                    <h3>
+                        CSS subgrid
+                    </h3>
+
+                    <p>
+                        Subgrid is now interoperable across all
+                        three major engines. Find out how to use it.
+                    </p>
+
+                </article>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+</body>
+</html>
